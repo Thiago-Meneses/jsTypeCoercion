@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang='us'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>Type Coercion</title>
+
+        <!-- Personal CSS -->
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="https://thiago-meneses.github.io/spacing.css">
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="bd-container">
+            <aside>
+                <div class="sidebar-container">
+                    <details class="navbar mt-5">
+                        <summary>Flex Elements</summary>
+                        <ul class="navbar-ul noBullet px-3">
+                            <li><a href="#truthiness">Truthiness</a></li>
+                        </ul>
+                    </details>
+                </div>
+            </aside>
+            <main class="main-container">
+                <div class='main-content'>
+                    <div class="content-header mb-5">
+                        <h1 class="headline title-frame my-3">Type Coercion</h1>
+                        <p class="mt-3">Type Coercion can be described as the automatic or implicit conversion of values from one data type to another.</p>
+                        <p class="mb-3">This characteristic makes JavaScript a very forgiving language when it comes to types.</p>
+                        <p class="mt-5">To better understand what Type Coercion actually means, it's important to learn the meaning of the word <b>Coerce</b>:</p>
+                        <p>Definition of <b>Coerce</b>:</p>
+                        <p>-<q class="italics">To <b>Persuade</b> or <b>Obtain</b> something by <b>using force</b></q>.</p>
+                    </div>
+                    <div class="content">
+                        <p class="my-3">Coming back to programming, Type Coercion is basically telling us that JavaScript will <b>force</b> a certain type of value to be <b>converted</b> into another type when we are doing operations.</p>
+                        <p class="mt-3">Some operators in will specifically convert values into numbers.</p>
+                        <p>Operators:</p>
+                        <ul class="mb-3">
+                            <li><code class='inlineCode'>-</code></li>
+                            <li><code class='inlineCode'>*</code></li>
+                            <li><code class='inlineCode'>/</code></li>
+                            <li><code class='inlineCode'>%</code></li>
+                        </ul>
+                        <details class="example-container-content">
+                            <summary class="my-2"><b>Examples:</b></summary>
+                            <h3 class="my-2"><b>How different types are converted</b></h3>
+                            <h4 class="mt-5">1º Example:</h4>
+                            <div class="example-grid">
+                                <div class="item1">
+                                    <pre class='snippet px-3'>
+                                        <code>
+25 + true
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div class="item2">
+                                    <code>Console:</code>
+                                </div>
+                                <div class="item3">
+                                    <pre class="console">
+                                        <code>
+26
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div class="item4">
+                                    <p class="mt-2"><code class="inlineCode">true</code> is converted into <code class="inlineCode">1</code></p>
+                                </div>
+                            </div>  
+                            <h4 class="mt-5">2º Example:</h4>
+                            <div class="example-grid">
+                                <div class="item1">
+                                    <pre class='snippet px-3'>
+                                        <code>
+25 * false
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div class="item2">
+                                    <code>Console:</code>
+                                </div>
+                                <div class="item3">
+                                    <pre class="console">
+                                        <code>
+0
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div class="item4">
+                                    <p class="mt-2"><code class="inlineCode">false</code> is converted into <code class="inlineCode">0</code></p>
+                                </div>
+                            </div>
+                            <h4 class="mt-5">3º Example:</h4>
+                            <div class="example-grid">
+                                <div class="item1">
+                                    <pre class='snippet px-3'>
+                                        <code>
+5 - "1"
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div class="item2">
+                                    <code>Console:</code>
+                                </div>
+                                <div class="item3">
+                                    <pre class="console">
+                                        <code>
+4
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div class="item4">
+                                    <p class="mt-2"><code class="inlineCode">1</code> is a string, it was converted to a number and subtracted from 5</p>
+                                </div>
+                            </div>
+                            <h4 class="mt-5">4º Example:</h4>
+                            <div class="example-grid">
+                                <div class="item1">
+                                    <pre class='snippet px-3'>
+                                        <code>
+5 + "1"
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div class="item2">
+                                    <code>Console:</code>
+                                </div>
+                                <div class="item3">
+                                    <pre class="console">
+                                        <code>
+"51"
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div class="item4">
+                                    <p class="mt-2">By default, types are converted into <b>string as a priority</b>.</p>
+                                </div>
+                            </div>
+                        </details>
+                        <div class='frame-line'>
+                            <h1 class='headline' id="truthiness"><span class="backdrop">Truthiness</span></h1>
+                            <p class="my-3">JavaScript is able to convert countless types of values into <code class="inlineCode">true</code> or <code class="inlineCode">false</code></p>
+                            <p>Some values are <span class="blue-backdrop">truthy</span>, because they can get converted into true.</p>
+                            <p class="mt-2 mb-3">Some values are <span class="blue-backdrop">falsy</span>, because they can get converted into false.</p>
+
+                            <p>Falsy values</p>
+                            <ul>
+                                <li class="my-1"><code class="inlineCode">false</code></li>
+                                <li class="my-1"><code class="inlineCode">0n</code></li>
+                                <li class="my-1"><code class="inlineCode">0</code></li>
+                                <li class="my-1"><code class="inlineCode">-0</code></li>
+                                <li class="my-1"><code class="inlineCode">""</code></li>
+                                <li class="my-1"><code class="inlineCode">NaN</code></li>
+                                <li class="my-1"><code class="inlineCode">null</code></li>
+                                <li class="my-1"><code class="inlineCode">undefined</code></li>
+                            </ul>
+                            <p class="mt-5">Truthy values</p>
+                            <ul>
+                                <li>All values that aren't falsey</li>
+                                <li>Because of this, most values in JavaScript end up beng converted into true.</li>
+                            </ul>
+                        </div>
+                    </div>
+				</div>
+            </main>
+        </div>
+    </body>
+</html>
